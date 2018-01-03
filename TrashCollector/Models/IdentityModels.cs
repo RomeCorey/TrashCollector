@@ -29,5 +29,7 @@ namespace TrashCollector.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<TrashCollector.Models.Day> Days { get; set; }
     }
 }
