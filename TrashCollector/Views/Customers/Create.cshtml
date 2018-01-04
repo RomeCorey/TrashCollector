@@ -31,10 +31,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.DayOfTheWeek, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PickupDay, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.DayOfTheWeek, new SelectList(Model.DayOfTheWeek, "DayOfTheWeek", "Name"), "", new { @class = "form-control" } )})
-                @Html.ValidationMessageFor(model => model.DayOfTheWeek, "", new { @class = "text-danger" })))
+                @*@Html.DropDownListFor(model => model.PickupDay, new SelectList(Model.DaysOfTheWeek, "DaysOfTheWeek", "Name"), "", new { @class = "form-control" } )})*@
+                @Html.DropDownListFor(model => model.PickupDay, new List<SelectListItem>
+            {
+                 new SelectListItem() {Text="Monday", Value="Monday" },
+                 new SelectListItem() {Text="Tuesday", Value="Tuesday" }
+            },
+             new { @class = "form-control" } )
+
+
+                 @Html.ValidationMessageFor(model => model.PickupDay, "", new { @class = "text-danger" }) 
             </div>
         </div>
 

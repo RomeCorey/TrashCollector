@@ -19,12 +19,7 @@ namespace TrashCollector.Controllers
         {
             return View(db.Customers.ToList());
         }
-
-        // GET: Day of trash pickup
-
         
-
-
         // GET: Customers/Details/5
         public ActionResult Details(int? id)
         {
@@ -43,7 +38,15 @@ namespace TrashCollector.Controllers
         // GET: Customers/Create
         public ActionResult Create()
         {
-            return View();
+            List<string> daysOfWeek = new List<string>();
+            daysOfWeek.Add("Monday");
+            daysOfWeek.Add("Tuesday");
+
+            Customer customer = new Customer()
+            {
+                DaysOfTheWeek = daysOfWeek
+            };
+            return View(customer);
         }
 
         // POST: Customers/Create

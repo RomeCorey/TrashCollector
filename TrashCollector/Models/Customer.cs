@@ -21,6 +21,8 @@ namespace TrashCollector.Models
         public string StreetName { get; set; }
         public string City { get; set; }
         public int Zip { get; set; }
-        public IEnumerable DayOfTheWeek { get; set; }
+
+        public string PickupDay { get; set; }
+        public IEnumerable<string> DaysOfTheWeek { get; set; }
     }
 }
