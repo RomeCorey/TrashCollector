@@ -46,13 +46,13 @@ namespace TrashCollector.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CustomerId,UserName,UserPassword,CustomerDay,AddressId")] Customer customer)
+        public ActionResult Create([Bind(Include = "CustomerId,UserName,UserPassword,CustomerDay,StreetName,City,Zip")] Customer customer)
         {
             if (ModelState.IsValid)
             {
                 db.Customers.Add(customer);
                 db.SaveChanges();
-                return RedirectToAction("Create", "Addresses", customer);
+                return RedirectToAction("Index");
             }
 
             return View(customer);
@@ -78,7 +78,7 @@ namespace TrashCollector.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CustomerId,UserName,UserPassword,CustomerDay,AddressId")] Customer customer)
+        public ActionResult Edit([Bind(Include = "CustomerId,UserName,UserPassword,CustomerDay,StreetName,City,Zip")] Customer customer)
         {
             if (ModelState.IsValid)
             {
