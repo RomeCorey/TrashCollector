@@ -34,5 +34,6 @@ namespace TrashCollector.Models
 
         public System.Data.Entity.DbSet<TrashCollector.Models.Customer> Customers { get; set; }
         
+        
     }
 }

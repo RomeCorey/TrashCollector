@@ -20,6 +20,11 @@ namespace TrashCollector.Controllers
             return View(db.Customers.ToList());
         }
 
+        // GET: Day of trash pickup
+
+        
+
+
         // GET: Customers/Details/5
         public ActionResult Details(int? id)
         {

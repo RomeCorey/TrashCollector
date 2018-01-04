@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -10,11 +11,16 @@ namespace TrashCollector.Models
     {
         [Key]
         public int CustomerId { get; set; }
+        [Display(Name = "Username")]
         public string UserName { get; set; }
+        [Display(Name = "Password")]
         public string UserPassword { get; set; }
+        [Display(Name = "Day of trash pickup")]
         public int CustomerDay { get; set; }
+        [Display(Name = "Address")]
         public string StreetName { get; set; }
         public string City { get; set; }
         public int Zip { get; set; }
+        public IEnumerable DayOfTheWeek { get; set; }
     }
 }
